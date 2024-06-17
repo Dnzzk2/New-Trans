@@ -23,6 +23,7 @@ const Ep2 = () => {
 
     // 开始一次视图过渡：
     const transition = document.startViewTransition(() => {
+      console.log("立即执行");
       setColorMode(colorMode === "light" ? "dark" : "light");
     });
 
@@ -37,14 +38,15 @@ const Ep2 = () => {
 
       document.documentElement.animate(
         {
-          clipPath: isLightToDark ? clipPath : reversedClipPath,
+          clipPath: isLightToDark ? reversedClipPath : clipPath,
         },
         {
-          duration: 30000,
-          // 指定要附加动画的伪元素
+          //只是给伪元素加动画，加完动画，就会执行回调函数，只是动画时间比较长
+          duration: 40000,
+          // 指定要附加动画的伪元素,
           pseudoElement: isLightToDark
-            ? "::view-transition-new(ep2)"
-            : "::view-transition-old(ep2)",
+            ? "::view-transition-old(ep2)"
+            : "::view-transition-new(ep2)",
         }
       );
     });

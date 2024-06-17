@@ -4,14 +4,19 @@
   mix-blend-mode: normal;
 }
 
-::view-transition-old(ep2) {
-  z-index: 600;
-  @apply dark:z-[2147483646];
-}
-
 ::view-transition-new(ep2) {
   z-index: 2147483646;
-  @apply dark:z-[600];
+}
+
+::view-transition-old(ep2) {
+  z-index: 600;
+}
+
+.dark::view-transition-new(ep2) {
+  z-index: 600;
+}
+.dark::view-transition-old(ep2) {
+  z-index: 2147483646;
 }
 
 .all {

@@ -36,10 +36,12 @@ const Ep1 = () => {
       document.documentElement.animate(
         {
           clipPath: clipPath,
+          // clipPath: [...clipPath].reverse(),
         },
         {
           duration: 500,
           pseudoElement: "::view-transition-new(root)",
+          // pseudoElement: "::view-transition-old(root)",
         }
       );
     });

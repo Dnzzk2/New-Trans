@@ -9,6 +9,9 @@ const linkList = [
   {
     label: "波浪-进阶",
   },
+  {
+    label: "数字滚动",
+  },
 ];
 
 const Home = () => {
