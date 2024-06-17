@@ -1,0 +1,19 @@
+::view-transition-old(ep2),
+::view-transition-new(ep2) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(ep2) {
+  z-index: 600;
+  @apply dark:z-[2147483646];
+}
+
+::view-transition-new(ep2) {
+  z-index: 2147483646;
+  @apply dark:z-[600];
+}
+
+.all {
+  view-transition-name: ep2;
+}
